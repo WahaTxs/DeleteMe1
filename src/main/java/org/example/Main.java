@@ -15,13 +15,26 @@ public class Main {
     public static void bubbleSort(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
-               if( nums[j] > nums[j+1]) {
-                   int temp = nums[j];
-                   nums[j] = nums[j + 1];
-                   nums[j + 1] = temp;
-               }
+                if (nums[j] > nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
             }
         }
+    }
 
+    public static void selectionSort(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < nums.length;j++) {
+                if(nums[min] > nums[j]) {
+                    min = j;
+                }
+            }
+            int temp = nums[i];
+            nums[i] = nums[min];
+            nums[min] = temp;
+        }
     }
 }
